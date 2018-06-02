@@ -1,10 +1,10 @@
 # Python for Self-Trackers
 
-## How to Quantify, Visualize and Better Understand a Life in Data 
+## How to Become a Data-Driven You
 
 ##### PyCon APAC (June 2, 2018, Singapore)
 
-**Slides Coming Soon**
+[Slides](https://rawgit.com/markwk/python4selftrackers/tree/master/slides/index.html) and [Code Examples](https://github.com/markwk/qs_ledger/)
 
 ### Talk Intro: 
 
@@ -24,7 +24,9 @@ In short, can self-tracking and personal data help us become more productive, he
 
 ### Talk Outline:
 
-* Coming Soon.
+* Part 1: QS / Self-Tracking</u>: How to measure a life?
+* Part 2: Python for Self-Trackers with [QS Ledger](https://github.com/markwk/qs_ledger)
+* Part 3: How to Become a Data-Driven You
 
 #### About Speaker:
 
@@ -32,5 +34,10 @@ Mark Koester (@markwkoester) is a self-tracker, writer, and web and mobile app d
 
 #### Slides: 
 
-* Coming Soon.
+* [https://rawgit.com/markwk/python4selftrackers/tree/master/slides/index.html](https://rawgit.com/markwk/python4selftrackers/tree/master/slides/index.html) 
+
+#### Code Examples: 
+
+*[github.com/markwk/qs_ledger](https://github.com/markwk/qs_ledger/)
+
 

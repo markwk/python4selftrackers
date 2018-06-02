@@ -1,0 +1,685 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Python for Self-Trackers</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+					<textarea data-template>
+					
+					Python For Self-Trackers: 
+					
+					## How To Become A Data-Driven You
+					
+					<br/>
+					<br/>
+					
+					by Mark Koester <br />
+					www.markwk.com | github.com/markwk
+					<br />
+					<br />
+					<small>Slides: [github.com/markwk/python4selftrackers](https://github.com/markwk/python4selftrackers)</small>
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+					
+					## Slides: 
+					
+					github.com/markwk/python4selftrackers
+					
+					</textarea>
+				</section>
+
+				<section data-background="https://media.giphy.com/media/aWxbEGCqkiZFK/giphy.gif">
+
+						<h2>GDPR? Data Leaks? Privacy?</h2>
+						
+				</section>
+
+				<section data-background="https://media.giphy.com/media/GXmXd0d9W5IMo/giphy.gif">
+
+						<h2>Your data is an opportunity.</h2>
+						
+				</section>
+
+				<section>
+
+						<h3>Personal Example of Improved Health.</h3>
+						
+						<img data-src="slide-images/fat-mark.jpg" height=400>
+						
+						<p><small>Circa 2015.</small></p>
+						
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						
+						<img data-src="slide-images/mark-headshot-squared.jpg">
+
+						## I'm a digital documentarist.
+
+						I am [Mark Koester](https://twitter.com/markwkoester). I'm a tech entrepreneur, a [mobile, web and data developer](http://int3c.com), a [writer](http://www.markwk.com) and...
+					</textarea>
+				</section>
+
+				<section data-background="https://media.giphy.com/media/fQv14BBnOMTaU/giphy.gif">
+						<br>
+						<br>
+						<br>
+						<h2>... and a self-tracker!</h2>
+				</section>	
+
+				<section data-markdown>
+					<textarea data-template>
+					## How are we being tracked?
+					<br>
+					<br>
+					...and is it all bad? 
+					</textarea>
+				</section>
+				
+				<section data-markdown>
+					<textarea data-template>
+					## A Simple Question:
+					<br>
+					Can <u>self-tracking</u> and <u>personal data</u> help us become more productive, healthier, and happier?
+					<br/>
+					<br/>
+					In short: __What can I do with my data?__
+
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+
+						Outline:
+						
+						<u>Part 1: QS / Self-Tracking</u>: How to measure a life?
+						
+						<u>Part 2: Python for Self-Trackers</u> 
+						
+						* [QS Ledger](https://github.com/markwk/qs_ledger): A Personal Data Dashboard
+						* **Data Collection**: Aggregating & Processing
+						* **Data Visualization** 
+						* **Exploring Correlation** and answer questions.
+						
+						<u>Part 3: How to Become a Data-Driven You</u> 
+						
+					</textarea>
+				</section>	
+				
+				<section data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+					<h1>Part 1: How to measure a life?</h1>
+				</section>
+
+				<section id="fragments">
+				
+				<h2>Quantified Self / Self-Tracking</h2>
+				
+				<p class="fragment fade-left">
+				<small>(def.)</small>
+				<br>
+				Measuring or documenting something about your self to gain meaning or make improvements.</p>
+				
+				</section>
+
+				<section id="fragments">
+				
+				<h2>Examples of Self-Tracking / QS / Lifelogging</h2>
+			<br>
+			<br>
+			<small><a href="https://github.com/markwk/awesome-quantified-self">github.com/markwk/awesome-quantified-self</a></small>
+				</section>
+
+				<section>
+				I track a lot of aspects of my life. 
+				</section>
+										
+				<section>
+					<section data-background="https://media.giphy.com/media/l3mZnuz4coJp8EBBm/giphy.gif">
+						<h2>What Do I Track...?</h2>
+					</section>
+
+					<section>
+							<img data-src="slide-images/2017-A-Year-in-Computer-Time.png" width=500>
+					</section>
+
+					<section>
+							<img data-src="slide-images/2017-Year-in-Tasks-infographic.png" width=500>
+					</section>
+
+					<section>
+							<img data-src="slide-images/wordcounter.png" height=500>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+					## Time & Productivity			
+					
+					* Computing Time (RescueTime)
+					* Project Time (Toggl)
+					* Mobile Screen Time (Moment app)
+					* Tasks (Todoist)
+					* Habits and Goals (via Streaks, Habitica, Productive)
+					* Creative Written Words (Mac Word Counter app)
+
+					</textarea>
+					</section>
+
+					<section>
+							<img data-src="slide-images/apple-watch-tracker.jpg" width=500>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+					## Health
+
+					* Blood Biomarkers
+					* Sleep (AutoSleep app)						
+					* Blood Pressure (cuff blood pressure device)
+					* Blood Glucose
+					* Weight (digital scale and manual logging)
+					* Supplements and Medicine (RoundHealth)
+					* Daily Standing (Apple Watch)
+					* Steps (Apple Watch)
+					
+					</textarea>
+					</section>
+
+					<section>
+							<img data-src="slide-images/2017-step-count.jpg" width=600>
+					</section>	
+
+					<section data-markdown>
+					<textarea data-template>
+
+					## Fitness
+						
+					* Heart Rate (Apple Watch, Chest Strap)
+					* Stress / Heart Rate Variability (HRV4Training)
+					* Running (Strava)
+					* VO2 Max
+					* Strength Workouts (FitBod)
+					* Stretching and Mobility (self-logging)
+					
+					</textarea>
+					</section>				
+					
+					<section data-markdown>
+					<textarea data-template>
+					
+					## Learning & Media Consumption
+			
+					* Notes (Evernotes)
+					* Books Read (GoodReads)
+					* Articles Read (Pocket)
+					* TV and Movie Watching (Trakt.tv)
+					* Music (Last.fm)
+					* YouTube Watching
+					* Podcast Listening: PodcastTracker.com 
+	
+					</textarea>
+					</section>
+
+					<section>
+					
+						<img data-src="slide-images/my-year-in-podcast-listening-cover.png">
+					
+						<small><a href="http://podcasttracker.com">Podcast Listening: PodcastTracker.com</a>
+						 </small>
+					</section>
+				
+					<section data-markdown>
+					<textarea data-template>	
+
+					## Other Tracking Stuff
+					
+					* Money & Finances (Mint)
+					* Photos (PhotoStats.io)
+					* Location (Moves app, Reporter App)
+									
+					</textarea>
+					</section>	
+				
+				<section data-background="https://media.giphy.com/media/l0EoBlDn63scoVSXC/giphy.gif">
+						<h2>More on My Tracking and How I Visualize My Data</h2>
+						<br>
+						<p><a href="http://www.markwk.com/category/track-everything">www.markwk.com/category/track-everything</a></p>
+				</section>
+				
+				</section>										
+
+				<section>
+				<h2>Why do People Self-Track</h2>
+				
+				<div class="fragment fade-left">
+				
+				<img data-src="slide-images/why-people-self-track.png">
+				
+				<small>Source: Gimpel, Henner, Marcia Nißen, and Roland Görlitz. “Quantifying the Quantified Self: A Study on the Motivations of Patients to Track Their Own Health.” (2013)</small>
+				
+				</div>
+				</section>
+
+				<section id="fragments">
+						
+						<h3>Why Track Your Life?: Benefits of Self-Tracking</h3>
+						
+						<ul class="fragment">
+							<li>Improved Health. Support and track your fitness.</li>
+							<li>Better Time Management, Improved Productivity.</li>
+							<li>Augment your memory. Remember more stuff.</li>
+							<li>Manage your money</li>
+							<li>Achieve goals. Support habits. Manage projects</li>
+							<li>Understand your mood, energy level and stress.</li>
+							<li>Curiosity? Learn stuff about yourself.</li>
+							<li>Feedback and Engagement with life.</li>
+							<li>Personal Data is the Future.
+						</ul>
+
+				</section>
+
+				<section id="fragments">
+						
+						<h2>Opportunities</h2>
+						<h4>in the Tracking and Personal Data Space</h4>
+						
+						<ul>
+							<li class="fragment"><span style="color:red">Enabling and tracking new data points</span> <br>=><span class="fragment"> New sensors, cheaper testing, new tracking apps, etc.</span></li>
+							<li class="fragment"><span style="color:red">Deriving insight and meaning from existing data</span> <br/>=><span class="fragment"> More data and data accessibility, improved data science and machine learning, accessible ml/ai services, etc.</span></li>
+						</ul>
+
+				</section>
+				
+				<section>
+				<h2>My Contributions and Work</h2>
+				<h4>Enabling and tracking new data points</h4>
+				
+						<ul>
+							<li>PodcastTracker.com</li>
+							<li>PhotoStats.io</li>
+							<li>BioMarkerTracker.com</li>
+						</ul>
+				
+				<br>
+				<br>
+				
+				<h4>Deriving insight and meaning from existing data</h4>
+
+						<ul>
+							<li>Quantified Self (QS) Ledger</li>
+						</ul>
+				
+				</section>	
+
+				<section>
+				<img data-src="slide-images/podcast-tracker-homepage.png">
+				<p><a href="http://www.podcasttracker.com/">www.PodcastTracker.com</a></p>
+				<p><small>a web service to track your podcast listening and view your stats.</small></p>
+				</section>
+			
+				<section>
+				<img data-src="slide-images/photo-stats-io-homepage.png">
+				<p><a href="http://www.photostats.io">PhotoStats.io</a></p>
+				<p><small>mobile app for iOS and Android that tracks and auto-tags your photo library, helping you understand and find your photos.</small></p>
+				</section>	
+
+				<section>
+				<img data-src="slide-images/biomarker-tracker-screenshot.png">
+				<p><a href="http://www.biomarkertracker.com">BioMarkerTracker.com</a></p>
+				<p><small><a href="https://github.com/markwk/awesome-biomarkers">Open Source Database</a> on Key Health Biomakers, and App for Aggregating and Storing Blood Test Results</small></p>
+				</section>	
+
+				<section data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+					<h1>Part 2: Python for Self-Trackers</h1>
+				</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					### Why Python for QS and Self-Tracking? 
+			
+					* Python is a General Purpose Scripting Language
+					* Existing integrations to many services and APIs
+					* Robust Data Science Toolkit for data visualization and analysis with Pandas and Matlab
+					* Machine Learning, Modeling and Forecasting
+					* Great to explore and use locally. 
+					* Potential to extend for online usage.
+					
+					In short, Python provides a great way to get your data, explore it and build with it. 
+	
+					</textarea>
+					</section>
+
+				<section>
+				<p><a href="https://github.com/markwk/qs_ledger">Quantified Self (QS) Ledger</a></p>
+				<p><small>A Personal Data Aggregator and Dashboard for Self-Trackers and Quantified Self Enthusiasts</small></p>
+				<img data-src="slide-images/qs-ledger-01.png">
+				
+				<p><small>github.com/markwk/qs_ledger</small></p>
+				
+				</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## A BIT OF CODE...
+						
+					</textarea>
+					</section>
+
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Examples of Data Collection: 
+						
+						* [Fitbit and Downloading Steps, HR, and Sleep](https://github.com/markwk/qs_ledger/blob/master/fitbit/fitbit_downloader.ipynb)
+						* RescueTime
+						* Todoist
+						* Apple Health
+						* Kindle Highlights 
+						* Last.fm
+						* Toggl 
+						
+						<small>Work-in-Progress: Evernote, YouTube History, Pocket, HRV4Training, Goodreads, Google Fit, Email Analysis... and others.</small> 
+						
+					</textarea>
+					</section>
+
+				<section>
+				<p>Youtube History:</p>
+				
+				<p><small>www.markwk.com/youtube-tracking.html</small></p>
+				
+				<img data-src="slide-images/youtube-history-scrapper.png">
+				
+				</section>
+
+				<section>
+				<p>Youtube Time:</p>
+								
+				<img data-src="slide-images/youtube-time.png">
+				
+				</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Examples of Data Processing: 
+						
+						* Extracting and Manipulating Date Fields
+						* We need a unified (time series) reference
+						* RescueTime, Fitbit, Last.fm, etc. 
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Examples of Data Visualization: 
+						
+						* Computer Time, Sleep, Steps, Etc.
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Split-Apply-Combine
+						
+						* Example: Pivot Tables
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						Challenge is <u>data is everywhere</u>, but can we and how can we bring it together towards a.... 
+						
+						<br>
+						## Convergence of Data? 
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Personal Data Dashboard
+						
+						* Example: Monthly Review or Weekly Review
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Exploring Correlations
+						
+						* Opportunities for ML/AI...
+						
+					</textarea>
+					</section>
+
+				<section data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+					<h2>Part 3:</h2> 
+					<h3>How to Become a Data-Driven You</h3>
+				</section>
+
+				<section id="fragments">
+						
+						<h2>What Should You Track?</h2>
+						<h4>Four Essential Areas Everyone Should Track</h4>
+						
+						<ul class="fragment">
+							<li>Health</li>
+							<li>Time</li>
+							<li>Money</li>
+							<li>Goals, Projects and Tasks</li>
+						</ul>
+
+				</section>
+
+				<section id="fragments">
+						
+						<h2>How to Track?</h2>
+						<h4>A Couple Recommendations</h4>
+						
+						<ul class="fragment">
+							<li>Health: Blood Tests and Sleep</li>
+							<li>Time: RescueTime</li>
+							<li>Money: Mint.com</li>
+							<li>Goals, Projects and Tasks: Todoist</li>
+						</ul>
+
+				</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## "Deep Work" 
+						
+						vs. Distractions, email, etc. 
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						> "Deep Work: Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate."
+
+- Cal Newport, Deep Work.
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						### Are you consistently doing deep work?
+						
+						* if you are a creative or producer, focused time and energy are critical
+						* are you getting deep focused work done each and every work day? 
+						* Is most of your day sucked in administrative tasks?  
+						* Aim for 3-4 hours of uninterrupted deep work session per day. But maybe start with 1-2 hours. 
+								
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Sleep: Are you getting enough?  
+						
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+
+						<img data-src="slide-images/sleep-scores.jpg">
+						
+						<small>How much does sleep affect our health and creativity? A LOT.</small>
+						
+					</textarea>
+					</section>
+				
+					<section data-markdown>
+					<textarea data-template>
+
+						## "Time Well-Spent" 
+						
+						tech companies strive to own our attention.
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						> "With Time Well Spent, we want technology that cares about helping us spend our time, and our lives, well– not seducing us into the most screen time, always-on interruptions or distractions."
+
+- Tristan Harris, humanetech.com.
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						<img data-src="slide-images/mobile-phone-time-2018.png">
+						
+						<small>Previously, I was spending between 15-30 hours a week. Now it's around 5-10. That's a savings of 5-20 hours.</small>
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Conclusion
+						
+						* It's easier than ever to track our lives, though certain forms of self-tracking seem to provide the most value. 
+						* Recommendation: Track your time, get a heath check-up with blood testing, and find a way to quantify your work and projects. 
+						* Engage with your data. Specifically, Python can help you bring your data together, process it, explore it, visualize it and also model and forecast it. 
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						> Personal data should not just be a worry about privacy and protecting data; it should be an opportunity, an opportunity for understanding our relationship with technology, a chance for data-driven self-improvement, self-understanding and possibly a new data-driven you. 
+
+					</textarea>
+					</section>
+						
+				<section data-markdown data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+					<textarea data-template>
+					
+					### Notes / Slides / Code : 
+					[github.com/markwk/python4selftrackers](https://github.com/markwk/python4selftrackers)
+
+[github.com/markwk/qs_ledger](https://github.com/markwk/qs_ledger)
+					 
+					### PhotoStats App
+					
+					[www.PhotoStats.io](http://www.photostats.io)
+					
+					### Awesome Quantified Self
+						
+					github.com/markwk/awesome-quantified-self
+					
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## Conclusion / What's Next? / Q&A
+
+						* Email: mark@int3c.com						
+						* Personal Blog: [www.markwk.com](http://www.markwk.com)
+						* Linkedin: [linkedin.com/in/markwkoester](https://www.linkedin.com/in/markwkoester) 
+						* Github: [markwk](https://github.com/markwk/)
+						* Professional Portfolio: [Int3c.com/portfolio](http://int3c.com/portfolio) 
+						
+						<br/>
+						<small>Slides: [github.com/markwk/python4selftrackers](https://github.com/markwk/python4selftrackers)</small>
+						
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
