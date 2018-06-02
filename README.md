@@ -4,7 +4,7 @@
 
 ##### PyCon APAC (June 2, 2018, Singapore)
 
-[Slides](https://rawgit.com/markwk/python4selftrackers/tree/master/slides/index.html) and [Code Examples](https://github.com/markwk/qs_ledger/)
+[Slides](https://rawgit.com/markwk/python4selftrackers/master/slides/index.html) and [Code Examples](https://github.com/markwk/qs_ledger/)
 
 ### Talk Intro: 
 
@@ -34,7 +34,7 @@ Mark Koester (@markwkoester) is a self-tracker, writer, and web and mobile app d
 
 #### Slides: 
 
-* [https://rawgit.com/markwk/python4selftrackers/tree/master/slides/index.html](https://rawgit.com/markwk/python4selftrackers/tree/master/slides/index.html) 
+* [https://rawgit.com/markwk/python4selftrackers/master/slides/index.html](https://rawgit.com/markwk/python4selftrackers/master/slides/index.html) 
 
 #### Code Examples: 
 
