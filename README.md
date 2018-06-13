@@ -2,11 +2,11 @@
 
 ## How to Become a Data-Driven You
 
-##### PyCon APAC (June 2, 2018, Singapore)
-
 [Slides](https://rawgit.com/markwk/python4selftrackers/master/slides/index.html) and [Code Examples](https://github.com/markwk/qs_ledger/)
 
 ### Talk Intro: 
+
+My personal mission is focus on how to use data to understand and improve ourselves.  
 
 Curious how you are being tracking? Ever wondered what you can do with your personal data? 
 
@@ -24,9 +24,10 @@ In short, can self-tracking and personal data help us become more productive, he
 
 ### Talk Outline:
 
-* Part 1: QS / Self-Tracking</u>: How to measure a life?
-* Part 2: Python for Self-Trackers with [QS Ledger](https://github.com/markwk/qs_ledger)
-* Part 3: How to Become a Data-Driven You
+* Part 1: QS / Self-Tracking: How to measure a life?
+* Part 2: Data Aggregation and Data Analysis with Python and [QS Ledger](https://github.com/markwk/qs_ledger)
+* Part 3: Building a Personal Data Dashboard with Python and Tableau
+* Conclusion: Tips on How to Become a Data-Driven You
 
 #### About Speaker:
 
@@ -38,6 +39,9 @@ Mark Koester (@markwkoester) is a self-tracker, writer, and web and mobile app d
 
 #### Code Examples: 
 
-*[github.com/markwk/qs_ledger](https://github.com/markwk/qs_ledger/)
+* [github.com/markwk/qs_ledger](https://github.com/markwk/qs_ledger/)
 
+#### Previous Versions
 
+* June 17, 2018: PyCon in Bangkok, Thailand
+* [June 2, 2018: PyCon APAC in Singapore](https://github.com/markwk/python4selftrackers/tree/pycon-sg-2018)
