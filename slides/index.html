@@ -45,6 +45,7 @@
 				<section data-markdown>
 					<textarea data-template>
 					
+					
 					## Slides: 
 					
 					github.com/markwk/python4selftrackers
@@ -52,25 +53,13 @@
 					</textarea>
 				</section>
 
-				<section data-background="https://media.giphy.com/media/aWxbEGCqkiZFK/giphy.gif">
-
-						<h2>GDPR? Data Leaks? Privacy?</h2>
-						
-				</section>
-
-				<section data-background="https://media.giphy.com/media/GXmXd0d9W5IMo/giphy.gif">
-
-						<h2>Your data is an opportunity.</h2>
-						
-				</section>
-
 				<section>
 
-						<h3>Personal Example of Improved Health.</h3>
+						<p>My Mission / Question / Passion:</p>
 						
-						<img data-src="slide-images/fat-mark.jpg" height=400>
+						<br />
 						
-						<p><small>Circa 2015.</small></p>
+						<h2>Can <br/> <u>personal data</u> <br/> enable <br/> <u>self-improvement</u> <br/>?</h2>
 						
 				</section>
 
@@ -94,40 +83,43 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					## How are we being tracked?
+					#### "Tracking Everything" Guy
+					
+					<img data-src="slide-images/tracking-everything.png" height=500>
+					
+					<small>I've been experimenting with, tracking, writing, and building personal data-related projects for several years. SEE: www.markwk.com/category/track-everything</small>
+
+					</textarea>
+				</section>
+
+				<section>
+
+						<h3>Personal Example of Improved Health.</h3>
+						
+						<img data-src="slide-images/fat-mark.jpg" height=400>
+						
+						<p><small>Circa 2015.</small></p>
+						
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+					## My Question:
 					<br>
-					<br>
-					...and is it all bad? 
+					Can <u>self-tracking</u> and <u>personal data</u> help us better understand ourselves? And hopefully become more productive, healthier, and happier?
+
 					</textarea>
 				</section>
 				
 				<section data-markdown>
 					<textarea data-template>
-					## A Simple Question:
-					<br>
-					Can <u>self-tracking</u> and <u>personal data</u> help us become more productive, healthier, and happier?
-					<br/>
-					<br/>
-					In short: __What can I do with my data?__
 
-					</textarea>
-				</section>
-
-				<section data-markdown>
-					<textarea data-template>
-
-						Outline:
+				## Outline:
 						
-						<u>Part 1: QS / Self-Tracking</u>: How to measure a life?
-						
-						<u>Part 2: Python for Self-Trackers</u> 
-						
-						* [QS Ledger](https://github.com/markwk/qs_ledger): A Personal Data Dashboard
-						* **Data Collection**: Aggregating & Processing
-						* **Data Visualization** 
-						* **Exploring Correlation** and answer questions.
-						
-						<u>Part 3: How to Become a Data-Driven You</u> 
+				* Part 1: QS / Self-Tracking: How to measure a life?
+				* Part 2: Data Aggregation and Data Analysis with Python and [QS Ledger](https://github.com/markwk/qs_ledger)
+				* Part 3: Building a Personal Data Dashboard
+				* Conclusion: Tips on How to Become a Data-Driven You
 						
 					</textarea>
 				</section>	
@@ -200,7 +192,7 @@
 
 					## Health
 
-					* Blood Biomarkers
+					* Blood Biomarkers, i.e. traditional blood tests
 					* Sleep (AutoSleep app)						
 					* Blood Pressure (cuff blood pressure device)
 					* Blood Glucose
@@ -280,9 +272,10 @@
 				
 				<div class="fragment fade-left">
 				
-				<img data-src="slide-images/why-people-self-track.png">
-				
 				<small>Source: Gimpel, Henner, Marcia Nißen, and Roland Görlitz. “Quantifying the Quantified Self: A Study on the Motivations of Patients to Track Their Own Health.” (2013)</small>
+				
+				<img data-src="slide-images/why-people-self-track.png">
+						<small><a href="http://www.markwk.com/why-people-self-track.html">www.markwk.com/why-people-self-track.html</a></small>
 				
 				</div>
 				</section>
@@ -292,15 +285,14 @@
 						<h3>Why Track Your Life?: Benefits of Self-Tracking</h3>
 						
 						<ul class="fragment">
-							<li>Improved Health. Support and track your fitness.</li>
-							<li>Better Time Management, Improved Productivity.</li>
-							<li>Augment your memory. Remember more stuff.</li>
-							<li>Manage your money</li>
+							<li>Improved Health.</li>
+							<li>Better Time Management</li>
+							<li>Augment your memory.</li>
+							<li>Save and better invest your money</li>
 							<li>Achieve goals. Support habits. Manage projects</li>
 							<li>Understand your mood, energy level and stress.</li>
 							<li>Curiosity? Learn stuff about yourself.</li>
-							<li>Feedback and Engagement with life.</li>
-							<li>Personal Data is the Future.
+							<li>Personal Data is the Future.</li>
 						</ul>
 
 				</section>
@@ -357,7 +349,7 @@
 				</section>	
 
 				<section data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
-					<h1>Part 2: Python for Self-Trackers</h1>
+					<h2>Part 2: Data Aggregation and Data Analysis with Python and QS Ledger</h2>
 				</section>
 
 					<section data-markdown>
@@ -369,10 +361,20 @@
 					* Existing integrations to many services and APIs
 					* Robust Data Science Toolkit for data visualization and analysis with Pandas and Matlab
 					* Machine Learning, Modeling and Forecasting
-					* Great to explore and use locally. 
-					* Potential to extend for online usage.
+					* Great to explore and use locally, Potential to extend for external usage.
+					* **Python provides a great way to get your data, explore it and build with it.** 
+	
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
 					
-					In short, Python provides a great way to get your data, explore it and build with it. 
+					## Problems for Trackers:  
+			
+					* Lack of Data Engagement
+					* Silo-ed or Fragmented Data.
+					* Lack of rigorous data science and statistical analysis. 
 	
 					</textarea>
 					</section>
@@ -389,54 +391,26 @@
 					<section data-markdown>
 					<textarea data-template>
 
-						## A BIT OF CODE...
+						## Goal #1: Download and Process Personal Data
+						
+						* Pull Data from Tracking Services' APIs
+						* Split-Transform-Combine / Extract-Transform-Load (ETL)
 						
 					</textarea>
 					</section>
 
-
 					<section data-markdown>
 					<textarea data-template>
 
-						## Examples of Data Collection: 
+						## Examples of Data Collection from APIs: 
 						
 						* [Fitbit and Downloading Steps, HR, and Sleep](https://github.com/markwk/qs_ledger/blob/master/fitbit/fitbit_downloader.ipynb)
 						* RescueTime
 						* Todoist
-						* Apple Health
-						* Kindle Highlights 
 						* Last.fm
 						* Toggl 
 						
-						<small>Work-in-Progress: Evernote, YouTube History, Pocket, HRV4Training, Goodreads, Google Fit, Email Analysis... and others.</small> 
-						
-					</textarea>
-					</section>
-
-				<section>
-				<p>Youtube History:</p>
-				
-				<p><small>www.markwk.com/youtube-tracking.html</small></p>
-				
-				<img data-src="slide-images/youtube-history-scrapper.png">
-				
-				</section>
-
-				<section>
-				<p>Youtube Time:</p>
-								
-				<img data-src="slide-images/youtube-time.png">
-				
-				</section>
-
-					<section data-markdown>
-					<textarea data-template>
-
-						## Examples of Data Processing: 
-						
-						* Extracting and Manipulating Date Fields
-						* We need a unified (time series) reference
-						* RescueTime, Fitbit, Last.fm, etc. 
+						<small>Work-in-Progress: Evernote, YouTube History, Pocket, Goodreads, Google Fit... and others.</small> 
 						
 					</textarea>
 					</section>
@@ -444,9 +418,109 @@
 					<section data-markdown>
 					<textarea data-template>
 
-						## Examples of Data Visualization: 
+						## Examples of Data Collection and Processing from Manual Data: 
 						
-						* Computer Time, Sleep, Steps, Etc.
+						* Apple Health
+						* Kindle Highlights 
+						
+						<small>Work-in-Progress: HRV4Training, Email Analysis... and others.</small> 
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Examples of Raw Data Processing: 
+						
+						* Extracting and Manipulating Date Fields.
+						* We need a unified (time series) reference.
+						* We sometimes need to fix timezones. 
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						#### Kindle Highlights: Raw Data
+						
+						 <img data-src="slide-images/raw-kindle-results.png">
+
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						#### Kindle Highlights: Date-Time Processing 
+						
+						~~~~ 
+						from datetime import date, datetime as dt, timedelta as td
+						# date additions
+						my_clippings['timestamp'] = pd.to_datetime(my_clippings['timestamp'])
+						my_clippings['date'] = my_clippings['timestamp'].apply(lambda x: x.strftime('%Y-%m-%d')) # note: not very efficient
+						my_clippings['year'] = my_clippings['timestamp'].dt.year
+						my_clippings['month'] = my_clippings['timestamp'].dt.month
+						my_clippings['mnth_yr'] = my_clippings['timestamp'].apply(lambda x: x.strftime('%Y-%m')) # note: not very efficient
+						my_clippings['day'] = my_clippings['timestamp'].dt.day
+						my_clippings['dow'] = my_clippings['timestamp'].dt.weekday
+						my_clippings['hour'] = my_clippings['timestamp'].dt.hour
+						~~~~
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						#### Kindle Highlights: Month Counts 
+						
+						<img data-src="slide-images/kindle-group-by-month.png">
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						#### Example Data Visualization: Kindle Highlights Per Month 
+
+						<img data-src="slide-images/kindle-highlights-viz-code.png">
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						#### Example Data Visualization: Kindle Highlights Per Month 
+
+						<img data-src="slide-images/kindle-highlights-per-month.png">
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						### Aggregating Raw Data into Daily Counts
+						
+						<img data-src="slide-images/apple-health-steps-raw.png">
+						
+						<small>Example: Apple Health</small>
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					## Split-Apply-Combine
+					
+					<img data-src="slide-images/split-apply-combine.jpg">
+					
+					<small>SOURCE: https://www.safaribooksonline.com/library/view/learning-pandas/9781783985128/ch09s02.html</small>
 						
 					</textarea>
 					</section>
@@ -456,7 +530,82 @@
 
 						## Split-Apply-Combine
 						
-						* Example: Pivot Tables
+						* Step 1: Split the data into groups by creating a groupby object from the original DataFrame
+						* Step 2: apply a function like an aggregation, count or sum
+						* Step 3: Combine the results into a new DataFrame.
+						
+						<small>Ref: [pandas.pydata.org/pandas-docs/stable/groupby.html](https://pandas.pydata.org/pandas-docs/stable/groupby.html)</small>
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					### RescueTime: Split-Apply-Combine
+						
+					<img data-src="slide-images/rescuetime-raw.png">
+						
+					<small>Step 0: Raw Data from RescueTime API</small>
+					
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					### RescueTime: Split-Apply-Combine
+						
+					<img data-src="slide-images/rescuetime-dates-processed.png">
+						
+					<small>Step 1: Process Dates and Datetime from RescueTime API</small>
+					
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+					
+					### Step 2: Groupby
+						
+						
+						total_by_date_productivity =
+							activities.groupby(['JustDate',
+							'Productive'])['Seconds'].sum()
+							.reset_index(name='Seconds')
+						total_by_date_productivity['Minutes'] = 
+							round((total_by_date_productivity['Seconds'] / 60), 2)
+						
+					</textarea>
+					</section>					
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					### Step 3: Pivot Table and Sum
+					
+						table = total_by_date_productivity.
+							pivot_table(index='JustDate', 
+							columns='Productive', 
+							values='Seconds', aggfunc=np.sum)
+						
+					</textarea>
+					</section>	
+					
+					<section data-markdown>
+					<textarea data-template>
+					
+					### Results: Daily Productivity Time from RescueTime:
+						
+					<img data-src="slide-images/rescuetime-pivot-table.png">
+					
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+
+						## Part 3: Building a Personal Data Dashboard
 						
 					</textarea>
 					</section>
@@ -464,7 +613,7 @@
 					<section data-markdown>
 					<textarea data-template>
 
-						Challenge is <u>data is everywhere</u>, but can we and how can we bring it together towards a.... 
+						Challenge is <u>data is everywhere</u>, but how can we bring it together towards a.... 
 						
 						<br>
 						## Convergence of Data? 
@@ -475,9 +624,12 @@
 					<section data-markdown>
 					<textarea data-template>
 
-						## Personal Data Dashboard
+						## Goal #1b: Process and Combine
 						
-						* Example: Monthly Review or Weekly Review
+						* Common Datetime References
+						* Import Aggregated Data from Multiple Sources
+						* Combine into Unified Data Frame, i.e. "wide table"
+						* Ref: Merge: https://pandas.pydata.org/pandas-docs/stable/merging.html
 						
 					</textarea>
 					</section>
@@ -485,16 +637,130 @@
 					<section data-markdown>
 					<textarea data-template>
 
-						## Exploring Correlations
+						### Combining from Multiple Sources
 						
-						* Opportunities for ML/AI...
+						<img data-src="slide-images/importing-data-sources.png">
+						
+						Step 1: importing multiple data sources
+						
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+
+						### Combining from Multiple Sources
+						
+						<img data-src="slide-images/total-data-counts.png">
+						
+						Step 2: count of total datapoints, i.e. days, by type
+						
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+
+						## Combining from Multiple Sources
+						
+						<img data-src="slide-images/combining-dataframes.png">
+						
+						* Step 3: Merging Multiple DataFrames Together						
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Goal #2: Explore and Visualize Personal Data
+						
+						* Create a Personal Data Dashboard
+						* Options: Google Sheets, Tableau, Excel, R, Python... 
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					####  Google Sheets
+
+					<img data-src="slide-images/google-sheets-weekly-review-dashboard.png" width=800>
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					###  Tableau
+
+					<img data-src="slide-images/tableau_server_dashboard_0.png" width=600>
+					* <small>Business Intelligence (BI) tool that focuses on data visualization, dashboarding and data discovery. </small>
+					* <small>Helps you explore your data, tell stories with data, and produce interactive data visualizations. </small>
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Dashboard of
+						### Weekly / Monthly Trends
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+					###  Tableau Correlation Explorer
+
+					<img data-src="slide-images/tableau-correlations-01.png">
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## Exploring Data and Correlations
+						
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+
+					###  Tableau Correlation Explorer
+
+					<img data-src="slide-images/tableau-correlations-01.png">
+						
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+
+					###  Tableau Correlation Explorer
+
+					<img data-src="slide-images/tableau-correlations-02.png">
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## FUTURE: Machine Learning and AI for your personal data...
 						
 					</textarea>
 					</section>
 
 				<section data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
-					<h2>Part 3:</h2> 
-					<h3>How to Become a Data-Driven You</h3>
+					<h2>Conclusion:</h2> 
+					<h3>Tips on How to Become a Data-Driven You</h3>
 				</section>
 
 				<section id="fragments">
@@ -505,8 +771,8 @@
 						<ul class="fragment">
 							<li>Health</li>
 							<li>Time</li>
-							<li>Money</li>
 							<li>Goals, Projects and Tasks</li>
+							<li>Money</li>
 						</ul>
 
 				</section>
@@ -517,7 +783,7 @@
 						<h4>A Couple Recommendations</h4>
 						
 						<ul class="fragment">
-							<li>Health: Blood Tests and Sleep</li>
+							<li>Health: Baseline: Blood Tests + Sleep (and maybe HRV)</li>
 							<li>Time: RescueTime</li>
 							<li>Money: Mint.com</li>
 							<li>Goals, Projects and Tasks: Todoist</li>
@@ -548,51 +814,34 @@
 					<section data-markdown>
 					<textarea data-template>
 
-						### Are you consistently doing deep work?
+						### Are you doing deep work?
 						
-						* if you are a creative or producer, focused time and energy are critical
-						* are you getting deep focused work done each and every work day? 
-						* Is most of your day sucked in administrative tasks?  
+						* Are you getting deep focused work done each and every work day? Or is most of your day sucked in administrative tasks?  
 						* Aim for 3-4 hours of uninterrupted deep work session per day. But maybe start with 1-2 hours. 
 								
 					</textarea>
 					</section>
 
-					<section data-markdown>
-					<textarea data-template>
+				<section>
 
-						## Sleep: Are you getting enough?  
+						<h4>QUESTION: Can personal data enable self-improvement?</h4>
 						
-					</textarea>
-					</section>
+						<h2 class="fragment">Yes</h2> 
+						
+						<p class="fragment">But you need to engage with your data. You need to use your data, think with it, and leverage it to support your goal</p>
+						
+				</section>
 					
 					<section data-markdown>
 					<textarea data-template>
 
-						<img data-src="slide-images/sleep-scores.jpg">
+						## Summary
 						
-						<small>How much does sleep affect our health and creativity? A LOT.</small>
-						
-					</textarea>
-					</section>
-				
-					<section data-markdown>
-					<textarea data-template>
-
-						<img data-src="slide-images/hrv-stress.jpg" height="500">
-						
-						<small>How Stress does our health and mind?</small>
-						
-					</textarea>
-					</section>
-				
-
-					<section data-markdown>
-					<textarea data-template>
-
-						## "Time Well-Spent" 
-						
-						tech companies strive to own our attention.
+						* It's easier than ever to track our lives. 
+						* Some personal data can be more significant than others.
+						* Tip #1: Track your time, get a heath check-up with blood testing, and find a way to quantify your work and projects. 
+						* Tip #2: Engage with your data. 
+						* Python can help bring your data together, process it, explore it, visualize it and even model and forecast it. 
 						
 					</textarea>
 					</section>
@@ -600,39 +849,9 @@
 					<section data-markdown>
 					<textarea data-template>
 
-						> "With Time Well Spent, we want technology that cares about helping us spend our time, and our lives, well– not seducing us into the most screen time, always-on interruptions or distractions."
-
-- Tristan Harris, humanetech.com.
+						> Personal data and self-tracking are an opportunity for understanding ourselvess (and for understanding our relationship with technology). <br /> <br /> Self-tracking can enable and empower data-driven self-improvement and even a new data-driven you. 
 						
-					</textarea>
-					</section>
-
-					<section data-markdown>
-					<textarea data-template>
-
-						<img data-src="slide-images/mobile-phone-time-2018.png">
-						
-						<small>Previously, I was spending between 15-30 hours a week. Now it's around 5-10. That's a savings of 5-20 hours.</small>
-						
-					</textarea>
-					</section>
-
-					<section data-markdown>
-					<textarea data-template>
-
-						## Conclusion
-						
-						* It's easier than ever to track our lives, though certain forms of self-tracking seem to provide the most value. 
-						* Recommendation: Track your time, get a heath check-up with blood testing, and find a way to quantify your work and projects. 
-						* Engage with your data. Specifically, Python can help you bring your data together, process it, explore it, visualize it and also model and forecast it. 
-						
-					</textarea>
-					</section>
-
-					<section data-markdown>
-					<textarea data-template>
-
-						> Personal data should not just be a worry about privacy and protecting data; it should be an opportunity, an opportunity for understanding our relationship with technology, a chance for data-driven self-improvement, self-understanding and possibly a new data-driven you. 
+						Best of luck and happy tracking!
 
 					</textarea>
 					</section>
@@ -671,6 +890,119 @@
 						<small>Slides: [github.com/markwk/python4selftrackers](https://github.com/markwk/python4selftrackers)</small>
 						
 					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## Appendix / Bonus Stuff
+						
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## How did I get started tracking? 
+						
+						* While I have kept a journal for a long time, I first started tracking with a Fitbit. 
+						* I then started using time tracking tools like RescueTime and Toggl. 
+						* I currently track a dozen or so things. 
+						
+					</textarea>
+				</section>
+
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## How Often Do I Look at My Data?
+						
+						* Mostly use passive tracking, excluding daily check of HRV and Sleep. 
+						* Generally once a week, I do a [data-driven weekly review](http://www.markwk.com/data-driven-weekly-review.html).
+						* Sometimes more frequently depending on the experiment or goal I'm working on.
+						
+					</textarea>
+				</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					<small>How does Stress affect our health and mind?</small>
+
+					<img data-src="slide-images/hrv-stress.jpg" height="500">
+					
+					<small>[www.markwk.com/hrv-for-beginners.html](http://www.markwk.com/hrv-for-beginners.html)</small>
+						
+					</textarea>
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+					
+					## Sleep: Are you getting enough?
+
+					<img data-src="slide-images/sleep-scores.jpg">
+						
+					<small>How much does sleep affect our health and creativity? A LOT.</small>
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+						## "Time Well-Spent" 
+						
+						tech companies strive to own our attention.
+						
+						> "With Time Well Spent, we want technology that cares about helping us spend our time, and our lives, well– not seducing us into the most screen time, always-on interruptions or distractions."
+
+- Tristan Harris, humanetech.com.
+						
+					</textarea>
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+					
+					### Less Phone Time
+
+					<img data-src="slide-images/mobile-phone-time-2018.png">
+						
+					<small>Previously, I was spending between 15-30 hours a week. Now it's around 5-10. That's a savings of 5-20 hours.</small>
+						
+					</textarea>
+					</section>
+
+				<section>
+				<p>Youtube History <small>www.markwk.com/youtube-tracking.html</small></p>
+				
+				<img data-src="slide-images/youtube-history-scrapper.png">
+				
+				</section>
+
+				<section>
+				<h2>Youtube Time:</h2>
+				
+				<p>Question: How much time do you spend on ____? </p>
+								
+				<img class="fragment" data-src="slide-images/youtube-time.png">
+				
+				</section>
+
+				<section>
+				<h4>Timezone Conversion Functions</h4>
+								
+				<img data-src="slide-images/timezone-functions.png">
+				
+				</section>
+
+				<section>
+				<h4>Timezone Conversion Example: Running Workouts</h4>
+								
+				<img data-src="slide-images/running-timezone-conversion.png">
+				
 				</section>
 
 			</div>

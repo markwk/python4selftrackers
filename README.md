@@ -6,7 +6,7 @@
 
 ### Talk Intro: 
 
-My personal mission is focus on how to use data to understand and improve ourselves.  
+My personal mission is focused on how to use data to understand and improve yourself.  
 
 Curious how you are being tracking? Ever wondered what you can do with your personal data? 
 
@@ -26,12 +26,12 @@ In short, can self-tracking and personal data help us become more productive, he
 
 * Part 1: QS / Self-Tracking: How to measure a life?
 * Part 2: Data Aggregation and Data Analysis with Python and [QS Ledger](https://github.com/markwk/qs_ledger)
-* Part 3: Building a Personal Data Dashboard with Python and Tableau
+* Part 3: Building a Personal Data Dashboard
 * Conclusion: Tips on How to Become a Data-Driven You
 
 #### About Speaker:
 
-Mark Koester (@markwkoester) is a self-tracker, writer, and web and mobile app developer. Creator: [PhotoStatsApp](www.photostats.io), a photo tracking app without the cloud, [PodcastTracker](www.podcasttracker.com), a web app to log your podcast listening, and [Biomarker Tracker](www.biomarkertracker.com), a health analytics service to better understand your blood test results. He currently runs a boutique dev shop (Int3c.com) and is an active open source Drupal contributor. Former Regional Lead in Greater China at Techstars Accelerator. He regularly writes about self-tracking, quantified self and data-driven life at [www.markwk.com](http://www.markwk.com).     
+Mark Koester (@markwkoester) is a self-tracker, writer, and web and mobile app developer. Creator: [PhotoStatsApp](www.photostats.io), a photo tracking app without the cloud, [PodcastTracker](www.podcasttracker.com), a web app to log your podcast listening, and [Biomarker Tracker](www.biomarkertracker.com), a health analytics service to better understand your blood test results. He currently runs a boutique dev shop (Int3c.com) and is an active open source contributor. Former Regional Lead in Greater China at Techstars Accelerator. He regularly writes about self-tracking, quantified self and data-driven life at [www.markwk.com](http://www.markwk.com).     
 
 #### Slides: 
 
