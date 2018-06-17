@@ -43,5 +43,5 @@ Mark Koester (@markwkoester) is a self-tracker, writer, and web and mobile app d
 
 #### Previous Versions
 
-* June 17, 2018: PyCon in Bangkok, Thailand
+* [June 17, 2018: PyCon in Bangkok, Thailand](https://github.com/markwk/python4selftrackers/tree/pycon-th-2018)
 * [June 2, 2018: PyCon APAC in Singapore](https://github.com/markwk/python4selftrackers/tree/pycon-sg-2018)
