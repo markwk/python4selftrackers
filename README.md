@@ -9,9 +9,11 @@
 
 ### Meta Note: 
 
+These notes, talk slides and code samples are part of an on-going investigation at the nexus of personal data (i.e. from self-tracking, QS, service logs) and working with that data with Python (data collection, data processing, data analysis, data visualization and machine learning).
+
 My overall aim is to help people to gain better self-understanding and empowered self-improvement through personal data. 
 
-This note and the underlying talks and writings are a work-in-progress. See below for [Previous Versions](https://github.com/markwk/python4selftrackers#previous-versions) and [Related Writings](https://github.com/markwk/python4selftrackers#related-writings)
+This is an active work-in-progress. See below for [Previous Versions](https://github.com/markwk/python4selftrackers#previous-versions) and [Related Writings](https://github.com/markwk/python4selftrackers#related-writings)
 
 ### Talk Intro: 
 
