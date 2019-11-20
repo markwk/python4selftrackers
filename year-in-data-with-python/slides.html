@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Mark Koester">
+  <title>A Year in Data with Python</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">A Year in Data with Python</h1>
+  <p class="author">Mark Koester</p>
+  <p class="date">SoCal Python Meetup, Nov 19, 2019</p>
+</section>
+
+<section id="section" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1></h1><h1>
+A Year in Data
+</h1>
+<h2>
+Self-Tracking and Personal Data Analysis with Python
+</h2>
+<p><br/></p>
+<p>
+<p>Mark Koester | www.markwk.com <br/> SoCal Python Meetup, Nov 19, 2019<br/><br/></p></section>
+<section id="slides-and-code" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1>Slides and Code:</h1><p>github.com/markwk/python4selftrackers</p></section>
+<section id="about-me" class="title-slide slide level1"><h1>About Me</h1><p><img data-src="https://rawgit.com/markwk/python4selftrackers/master/slides/slide-images/mark-headshot-squared.jpg" /></p>
+<p>My name is <a href="www.markwk.com">Mark Koester</a>, and I am a product manager.</p></section>
+<section id="section-1" class="title-slide slide level1" data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif"><h1></h1><p>I track a lot of aspects of my life.</p></section>
+<section><section id="a-personal-example" class="title-slide slide level1"><h1>A Personal Example</h1></section><section id="me-in-20142015." class="slide level2">
+<h2>Me in 2014/2015.</h2>
+<p><img data-src="https://rawgit.com/markwk/python4selftrackers/master/slides/slide-images/fat-mark.jpg" style="width:40.0%" /></p>
+</section><section id="was-a-defining-year-for-me" class="slide level2">
+<h2>2015 was a defining year for me…</h2>
+<ul>
+<li class="fragment">Step tracking with Fitbit</li>
+<li class="fragment">Time Tracking with RescueTime</li>
+<li class="fragment">Getting Things Done by David Allen</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="two-years-later-in-2017">Two Years Later in 2017</h3>
+<p><img data-src="https://rawgit.com/markwk/python4selftrackers/master/slides/slide-images/mark-running-with-husky.jpg" style="width:50.0%" /></p>
+<p>My personal example of improved health and Self</p>
+</section></section>
+<section id="section-2" class="title-slide slide level1" data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif"><h1></h1><p>I’ve used self-tracking and personal data analysis to change my life.</p>
+<p><br/></p>
+<p class="fragment">
+And I believe technology and personal data can help others.
+</p></section>
+<section id="talk-outline" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1>Talk Outline</h1><ol type="1">
+<li>What is Quantified Self? How to Track a Life with Technology?</li>
+<li>Visualizing a Year (Month, Week, Day) in Data with <a href="https://github.com/markwk/qs_ledger">QS Ledger</a>.</li>
+</ol></section>
+<section><section id="part-1-how-to-measure-a-life" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1>PART 1: How to Measure a Life</h1><aside class="notes">
+<p>While the use of technology is novel and relatively recent, the idea of measuring and ‘watching’ life is not. Socrates famously said the unexamined life is not worth living and Benjamin Franklin kept a journal on his morals and habits.</p>
+</aside></section><section class="slide level2">
+
+<h3 id="quantified-self">Quantified Self</h3>
+<ul>
+<li class="fragment">(def.) <strong>Measuring or documenting something about your self to gain meaning or make improvements.</strong></li>
+<li class="fragment">Related: Self-tracking, Biohacking, Data-driven life…</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>2007: Quantified Self is neulogism created by Gary Wolf and Kevin Kelly, two writers at Wired Magazine.<br />
+</li>
+<li>2008: Wolf and Kelly founded the company Quantified Self with the aim “to help people get meaning out of their personal data”</li>
+<li>Movement</li>
+</ul>
+<h4 id="definitions-of-qs">Definitions of QS:</h4>
+<ul>
+<li>“Quantified Self (QS) is an emerging area of technology that allows consumers to use a variety of digital tools to collect data and learn about their behaviors and habits of everyday life.” (Rocket Fuel Survey, 2014)</li>
+<li>“The Quantified Self (QS) refers to a movement in which its participants track the biological, physical, behavioural, and/or environmental aspects of their everyday lives” (Eiben, 2015)</li>
+</ul>
+<p>QS is also become something we do with much of technology but without a specific need to call it out.</p>
+</aside>
+</section><section class="slide level2">
+
+<h3 id="why-track-a-life-benefits-of-self-tracking">Why Track a Life?: Benefits of Self-Tracking</h3>
+<ul>
+<li>Improved Health.</li>
+<li>Better Time Management</li>
+<li>Augment your memory.</li>
+<li>Save and better invest your money</li>
+<li>Achieve goals. Support habits. Manage projects</li>
+<li>Understand your mood, energy level and stress.</li>
+<li>Curiosity? Learn stuff about yourself.</li>
+<li>Personal Data is the Future.</li>
+</ul>
+</section><section class="slide level2">
+
+<p><img data-src="https://github.com/markwk/qs_mind_map/raw/master/qs-mind-map-full.png" style="width:90.0%" /></p>
+<p><small>Source: https://github.com/markwk/qs_mind_map</small></p>
+</section><section class="slide level2">
+
+<h3 id="popular-forms-of-tracking">Popular Forms of Tracking</h3>
+<ul>
+<li>Wearables (Apple Watch, Fitbit, Oura): steps, sleep, heart Rate (one in five Americans own a heart rate sensor today)</li>
+<li>Mood Tracking Apps, like MoodNotes</li>
+<li>Time Tracking (inc computer usage with RescueTime)</li>
+<li>Calendar, Projects and Tasks</li>
+<li>Strava, RunKeeper and many other sport apps</li>
+<li>Media Consumption: TV, music, articles, books…</li>
+<li>Weight</li>
+<li>Others: Money, Blood, DNS, Microbiome…</li>
+</ul>
+</section><section id="tools-for-self-tracking-qs-and-lifelogging" class="slide level2">
+<h2>Tools for Self-tracking, QS, and Lifelogging</h2>
+<p>github.com/markwk/awesome-quantified-self</p>
+</section><section id="opportunities" class="slide level2">
+<h2>Opportunities</h2>
+<h4 id="in-the-tracking-an-data-space">In the tracking an data space</h4>
+<ol type="1">
+<li class="fragment"><u>Enabling and tracking new data points</u> =&gt; Accessibility, new sensors, cheaper testing, new tracking apps, etc.</li>
+<li class="fragment"><u>Deriving insight and meaning from existing data</u> =&gt; More data, data accessibility, better data science and machine learning</li>
+</ol>
+<aside class="notes">
+<p>While questions of privacy remain the most discussed, there remain a number of challenges as well as opportunities in the personal data space. For me, I often think alot about not just data privacy but data accessibility.</p>
+</aside>
+</section><section id="my-contributions-and-work" class="slide level2">
+<h2>My Contributions and Work</h2>
+<h5 id="enabling-and-tracking-new-data-points">ENABLING AND TRACKING NEW DATA POINTS</h5>
+<ul>
+<li>PodcastTracker.com</li>
+<li>PhotoStats.io</li>
+<li>BioMarkerTracker.com</li>
+</ul>
+<p><br/></p>
+<h5 id="deriving-insight-and-meaning-from-existing-data">DERIVING INSIGHT AND MEANING FROM EXISTING DATA</h5>
+<ul>
+<li>Quantified Self (QS) Ledger</li>
+</ul>
+<p><br/></p>
+<p><small>Writings: www.markwk.com, datadrivenyou.com</small></p>
+</section><section class="slide level2">
+
+<h4 id="data-driven-life-tip-1">Data-Driven Life Tip #1:</h4>
+<h2>
+Where to start with tracking a life?
+</h2>
+<p><br/></p>
+<h2 class="fragment">
+Start with a Question or a Goal
+</h2>
+<h1 class="fragment">
+TRACK IT!
+</h1>
+<aside class="notes">
+<p>When it comes to self-tracking, we often think alot about the technology or “solution.” I have X device, wearable or app. Now what can it track? I prefer to start with a question or goal and then figure out how I might track that area. Once I’m tracking it, I can know my baseline and make appropriate targets for changes and improvement.</p>
+</aside>
+</section></section>
+<section><section id="part-2-visualizing-a-year-in-data" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1>PART 2: Visualizing a Year in Data</h1></section><section class="slide level2">
+
+<p><img data-src="https://rawgit.com/markwk/python4selftrackers/master/slides/slide-images/qs-ledger-01.png" /></p>
+<p><a href="github.com/markwk/qs_ledger">github.com/markwk/qs_ledger</a></p>
+<aside class="notes">
+<p>The project has two primary goals:</p>
+<ol type="1">
+<li>download all of your personal data from various tracking services (see below for list of integration services) and store locally.</li>
+<li>provide the starting point for personal data analysis, data visualization and a personal data dashboard</li>
+</ol>
+<p>It also includes examples for finding correlations, machine learning and patterns across your data.</p>
+</aside>
+</section><section class="slide level2">
+
+<h3 id="built-with-python-3-and-jupyter-notebooks">Built with Python 3 and Jupyter Notebooks</h3>
+</section><section class="slide level2">
+
+<h3 id="current-integrations-14">Current Integrations (1/4):</h3>
+<ul>
+<li><u>Apple Health</u>: fitness and health tracking and data analysis from iPhone or Apple Watch.</li>
+<li><u>AutoSleep</u>: iOS sleep tracking data analysis of sleep per night and rolling averages.</li>
+<li><u>Fitbit</u>: fitness and health tracking and analysis of Steps, Sleep, and Heart Rate from a Fitbit wearable.</li>
+<li><u>GoodReads</u>: book reading tracking and data analysis for GoodReads.</li>
+<li><u>Google Calendar</u>: past events, meetings and times for Google Calendar.</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="current-integrations-24">Current Integrations (2/4):</h3>
+<ul>
+<li><u>Google Sheets</u>: get data from any Google Sheet which can be useful for pulling data from IFTTT integrations that add data.</li>
+<li><u>Habitica</u>: habit and task tracking with Habitica’s gamified approach to task management.</li>
+<li><u>Instapaper</u>: articles read and highlighted passages from Instapaper.</li>
+<li><u>Kindle Highlights</u>: Parser and Highlight Extract from Kindle clippings, along with a sample data analysis and tool to export highlights to separate markdown files.</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="current-integrations-34">Current Integrations (3/4):</h3>
+<ul>
+<li><u>Last.fm</u>: music tracking and analysis of music listening history from Last.fm.</li>
+<li><u>Oura</u>: oura ring activity, sleep and wellness data.</li>
+<li><u>RescueTime</u>: track computer usage and analysis of computer activities and time with RescueTime.</li>
+<li><u>Pocket</u>: articles read and read count from Pocket.</li>
+<li><u>Strava</u>: activities downloader (runs, cycling, swimming, etc.) and analysis from Strava.</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="current-integrations-44">Current Integrations (4/4):</h3>
+<ul>
+<li><u>Todoist</u>: task tracking and analysis of todo’s and tasks completed history from Todoist app.</li>
+<li><u>Toggl</u>: time tracking and analysis of manual timelog entries from Toggl.</li>
+<li><u>WordCounter</u>: (Mac Only) extract wordcounter app history and visualize recent periods of word counts.</li>
+</ul>
+</section></section>
+<section><section id="installation-and-usage" class="title-slide slide level1"><h1>Installation and Usage</h1></section><section id="installation" class="slide level2">
+<h2>Installation</h2>
+<ul>
+<li>Use local Python 3 setup OR install Anaconda Distribution.</li>
+<li>pip or conda install Pandas, NumPy, Matplotlib and Seaborn</li>
+<li>For each project refer to its readme or notebook documentation for any specific dependencies.</li>
+</ul>
+</section><section id="code-organization" class="slide level2">
+<h2>Code Organization</h2>
+<p>Each project has:</p>
+<ol type="1">
+<li>NAME_downloader - notebook works with service API or raw data to get and process your data.</li>
+<li>NAME_data_analysis - notebook slices, dices and visualizes your data into different charts on different time dimensions.</li>
+</ol>
+</section><section id="basic-usage" class="slide level2">
+<h2>Basic Usage:</h2>
+<ul>
+<li>Choose a tracking service</li>
+<li>Setup integration (with developer keys when necessary)</li>
+<li>Download and process your data</li>
+<li>Configure and run data analysis and visualization</li>
+</ul>
+</section><section id="deeper-dive-into-code-and-usage" class="slide level2">
+<h2>Deeper Dive into Code and Usage</h2>
+<p>SEE: github.com/markwk/python4selftrackers</p>
+</section></section>
+<section><section id="my-year-in-data" class="title-slide slide level1"><h1>My Year in Data</h1><p>Coding Walkthrough (with RescueTime)</p>
+<p><br/></p>
+<p><a href="http://www.markwk.com/2019/01/year-in-data.html">www.markwk.com/2019/01/year-in-data.html</a></p></section><section id="my-year-in-numbers" class="slide level2">
+<h2>My Year in Numbers:</h2>
+<ul>
+<li>3,878,369 steps taken and logged.</li>
+<li>26 blog posts published on www.markwk.com.</li>
+<li>1559.72km kilometers (969.16 miles) run</li>
+<li>94 days (of time) on computer according to RescueTime</li>
+<li>84 days (of time) on projects according to manual time tracking</li>
+<li>2212 completed tasks in Todoist across more than a dozen projects.</li>
+</ul>
+</section><section id="a-year-in-media" class="slide level2">
+<h2>A Year in Media</h2>
+<ul>
+<li>18,657 book pages read accross 60 books, according to GoodReads</li>
+<li>1785 articles reading via Pocket and Instapaper</li>
+<li>16,855 songs listened to and “scrobbled” in 2018 using Last.fm.</li>
+<li>My top genres were Synthwave, Electronic and Synthpop. My top track was Cold summer by Le Matos. And my “favorite” artist was Le Cassette.</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="photos-taken-tracked-via-photostats.io">2,991 photos taken (Tracked via PhotoStats.io)</h3>
+<p><img data-src="http://www.markwk.com/images/2019-resources/2018-Year-in-Photos-infographic.jpg" /></p>
+</section><section class="slide level2">
+
+<h4 id="data-driven-life-tip-2">Data-Driven Life Tip #2:</h4>
+<h2 class="fragment">
+Engage with your data.
+</h2>
+<aside class="notes">
+<p>Too many people expect that having a wearable or tracking tool is enough to create change. But the reality is that if you want tracking to lead to behavior change, you need to engage with your data and your goal too. Use data to bring you a self-reflection and feedback. Use data to reflect on your goals!</p>
+</aside>
+</section></section>
+<section><section id="conclusion" class="title-slide slide level1"><h1>Conclusion:</h1><h3>
+Tips on how to become a data-driven you
+</h3></section><section id="what-should-i-track" class="slide level2">
+<h2>What should I track?</h2>
+<h3 id="four-essential-areas-for-everyone-to-track">Four Essential Areas for Everyone to Track</h3>
+<ul>
+<li>Health</li>
+<li>Time</li>
+<li>Goals, Projects and Tasks</li>
+<li>Money</li>
+</ul>
+</section><section id="how-to-track" class="slide level2">
+<h2>How to Track?</h2>
+<h3 id="a-couple-recommendations">A COUPLE RECOMMENDATIONS</h3>
+<ul>
+<li>Health:
+<ul>
+<li>Blood Tests</li>
+<li>Sleep</li>
+<li>(and maybe Heart Rate Variability)</li>
+</ul></li>
+<li>Time: RescueTime</li>
+<li>Money: Mint.com or Personal Capital</li>
+<li>Goals, Projects and Tasks: Todoist</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="my-steps-towards-data-driven-self-improvement">My Steps Towards Data-Driven Self-Improvement</h3>
+<ul>
+<li>Set a Goal</li>
+<li>Track It</li>
+<li>Research the area.</li>
+<li>Make Lifestyle Changes</li>
+<li>And track those too, i.e. track your commitment and follow-through</li>
+<li>Check-in, Evaluate and Engage with your data</li>
+<li>Repeat</li>
+</ul>
+</section></section>
+<section id="section-3" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1></h1><h2>
+Summary
+</h2>
+<ul>
+<li>It’s easier than ever to track our lives.</li>
+<li>Some personal data can be more significant than others.</li>
+<li>Tip #1: Start with a question or goal, then track it.</li>
+<li>Tip #2: Engage with your data (and use Python!)</li>
+<li>Tip #3: Track your time, get a heath check-up with blood testing, and find a way to quantify your work and projects.</li>
+</ul>
+<p><small>Python can help: data collection, processing, exploring, visualizing and using.</small></p></section>
+<section id="section-4" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1></h1><h3>
+"In God we trust…
+</h3>
+<h2 class="fragment">
+…all others bring data."
+</h2>
+<p><small>W. Edwards Deming</small></p></section>
+<section id="thanks" class="title-slide slide level1" data-background="https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif"><h1>Thanks</h1><p><br></p>
+Slides and Code: github.com/markwk/python4selftrackers
+</p>
+<p><br></p>
+<p>www.markwk.com <br/> datadrivenyou.com<br/></p></section>
+<section><section id="references" class="title-slide slide level1"><h1>References</h1></section><section id="online-references" class="slide level3">
+<h3>Online References</h3>
+<ul>
+<li>Original Post: http://www.markwk.com/2019/01/year-in-data.html</li>
+<li>QS Ledger Code: github.com/markwk/qs_ledger</li>
+<li>QS Mind Map github.com/markwk/qs_mind_map</li>
+<li>QS Tools: github.com/markwk/awesome-quantified-self</li>
+</ul>
+</section><section id="published-references" class="slide level3">
+<h3>Published References</h3>
+</section><section class="slide level2">
+
+<p>Find me online at www.markwk.com!</p>
+<!-- tags: #TimeSeries #DataScience #DataAnalysis #QuantifiedSelf #blog-published #Slides #speech -->
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
